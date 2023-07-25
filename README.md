@@ -1,5 +1,5 @@
 # snmp-exporter-aerohive
-Build Prometheus Explorer with specific aerohive mibs
+Build Prometheus Exporter with specific aerohive mibs
 
 ## purpose
 
@@ -17,6 +17,11 @@ we'll decouple the binary artifacts from containers to make builds efficient.
 
 going to use aerohive mibs from https://github.com/netdisco/netdisco-mibs.git since they have some corrections. Fixes probably not needed, but why not.
 
-all MIBS in folder aerohive
-script
-```bash
+
+### converting hexadecimal to string
+
+most of the string values are returned as hex... we need ot convert them..
+
+apparently overrides in generator.yml is the most friendly way
+
+https://www.robustperception.io/numbers-from-displaystrings-with-the-snmp_exporter/
