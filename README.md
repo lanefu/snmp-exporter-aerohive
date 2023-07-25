@@ -17,6 +17,16 @@ we'll decouple the binary artifacts from containers to make builds efficient.
 
 going to use aerohive mibs from https://github.com/netdisco/netdisco-mibs.git since they have some corrections. Fixes probably not needed, but why not.
 
+place mibs in mibs folder
+
+#### generating snmp.yml
+
+`MIBSDIR` variable imporant
+
+```bash
+cd generator
+MIBSDIR=mibs make generate
+```
 
 ### converting hexadecimal to string
 
