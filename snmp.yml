@@ -1,0 +1,3134 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+auths:
+  public_v1:
+    community: public
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 1
+  public_v2:
+    community: public
+    security_level: noAuthNoPriv
+    auth_protocol: MD5
+    priv_protocol: DES
+    version: 2
+modules:
+  aerohive:
+    walk:
+    - 1.3.6.1.4.1.26928
+    metrics:
+    - name: ahAPId
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.1
+      type: OctetString
+      help: It is the node ID (MAC address in hexadecimal format) of the HiveAP where
+        the trap is generated - 1.3.6.1.4.1.26928.1.1.1.1.2.1
+    - name: ahAPName
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.2
+      type: OctetString
+      help: The host name of the HiveAP where the trap is generated. - 1.3.6.1.4.1.26928.1.1.1.1.2.2
+    - name: ahSeverity
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.3
+      type: gauge
+      help: It contains the serverity of the trap. - 1.3.6.1.4.1.26928.1.1.1.1.2.3
+      enum_values:
+        1: undetermined
+        2: info
+        3: minor
+        4: major
+        5: critical
+    - name: ahObjectName
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.4
+      type: DisplayString
+      help: It describes the object for which the trap is generated. - 1.3.6.1.4.1.26928.1.1.1.1.2.4
+    - name: ahProbableCause
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.5
+      type: gauge
+      help: It describes the probable cause of a problem. - 1.3.6.1.4.1.26928.1.1.1.1.2.5
+      enum_values:
+        0: ahClear
+        1: ahUnknown
+        2: ahFlashFailure
+        3: ahFanFailure
+        4: ahPowerSupplyFailure
+        5: ahSoftwareUpgradeFailure
+        6: ahRadioFailure
+        7: ahConfFailure
+    - name: ahCurValue
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.6
+      type: gauge
+      help: It contains the current value of a threshold counter. - 1.3.6.1.4.1.26928.1.1.1.1.2.6
+    - name: ahThresholdHigh
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.7
+      type: gauge
+      help: It contains the value for a high threshold. - 1.3.6.1.4.1.26928.1.1.1.1.2.7
+    - name: ahThresholdLow
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.8
+      type: gauge
+      help: It contains the value for a low threshold. - 1.3.6.1.4.1.26928.1.1.1.1.2.8
+    - name: ahPreviousState
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.9
+      type: gauge
+      help: It contains the value for a previous state. - 1.3.6.1.4.1.26928.1.1.1.1.2.9
+      enum_values:
+        1: ahUp
+        2: ahDown
+    - name: ahCurrentState
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.10
+      type: gauge
+      help: It contains the value for the current state. - 1.3.6.1.4.1.26928.1.1.1.1.2.10
+      enum_values:
+        1: ahUp
+        2: ahDown
+    - name: ahTrapDesc
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.11
+      type: DisplayString
+      help: It contains the description of the trap. - 1.3.6.1.4.1.26928.1.1.1.1.2.11
+    - name: ahCode
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.12
+      type: gauge
+      help: It contains access information to the Aerohive logging/action dictionary.
+        - 1.3.6.1.4.1.26928.1.1.1.1.2.12
+    - name: ahIfIndex
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.13
+      type: gauge
+      help: The interface index used to identify uniquely an interface (logical or
+        physical). - 1.3.6.1.4.1.26928.1.1.1.1.2.13
+    - name: ahObjectType
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.14
+      type: gauge
+      help: 'It specifies the object type: a client link or a neighbor link. - 1.3.6.1.4.1.26928.1.1.1.1.2.14'
+      enum_values:
+        1: clientLink
+        2: neighborLink
+    - name: ahRemoteId
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.15
+      type: OctetString
+      help: It is the MAC address of the remote node - 1.3.6.1.4.1.26928.1.1.1.1.2.15
+    - name: ahIDPType
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.16
+      type: gauge
+      help: It is used to indicate the AP identified is a rogue, or valid, or compliant,
+        or noncompliant, or external AP. - 1.3.6.1.4.1.26928.1.1.1.1.2.16
+      enum_values:
+        1: rogue
+        2: valid
+        3: external
+    - name: ahIDPChannel
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.17
+      type: gauge
+      help: It is the channel number used by the identified AP. - 1.3.6.1.4.1.26928.1.1.1.1.2.17
+    - name: ahIDPRSSI
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.18
+      type: gauge
+      help: It is the RSSI for the identified AP or Client. - 1.3.6.1.4.1.26928.1.1.1.1.2.18
+    - name: ahIDPCompliance
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.19
+      type: gauge
+      help: It is bit mask to indicate which policy the indentified AP is compliant
+        with (bit is set if it is NOT compliant). - 1.3.6.1.4.1.26928.1.1.1.1.2.19
+      enum_values:
+        1: openPolicy
+        2: wepPolicy
+        4: wpaPolicy
+        8: wmmPolicy
+        16: ouiPolicy
+        32: ssidPolicy
+        64: shortPreamblePolicy
+        128: shortBeaconPolicy
+        256: adHocPolicy
+    - name: ahSSID
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.20
+      type: DisplayString
+      help: It contains the SSID name for the detected AP. - 1.3.6.1.4.1.26928.1.1.1.1.2.20
+    - name: ahStationType
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.21
+      type: gauge
+      help: It indicates whether it is event for a peer AP or client PC - 1.3.6.1.4.1.26928.1.1.1.1.2.21
+      enum_values:
+        1: stationAp
+        2: stationClient
+    - name: ahIDPStationData
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.22
+      type: gauge
+      help: It is bit mask to indicate policies are detected for the identified AP  -
+        1.3.6.1.4.1.26928.1.1.1.1.2.22
+      enum_values:
+        1: openPolicy
+        2: wepPolicy
+        4: wpaPolicy
+        8: wmmPolicy
+        64: shortPreamblePolicy
+        128: shortBeaconPolicy
+        256: adHocPolicy
+    - name: ahRemoved
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.23
+      type: gauge
+      help: It indicates whether the AP or client can not be detected. - 1.3.6.1.4.1.26928.1.1.1.1.2.23
+      enum_values:
+        0: removedFalse
+        1: removedTrue
+    - name: ahClientMAC
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.24
+      type: OctetString
+      help: It contains the MAC address of the wireless client - 1.3.6.1.4.1.26928.1.1.1.1.2.24
+    - name: ahCLientIP
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.25
+      type: DisplayString
+      help: It contains the IP address of the wireless client - 1.3.6.1.4.1.26928.1.1.1.1.2.25
+    - name: ahClientHostName
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.26
+      type: DisplayString
+      help: It contains the host name of the wireless client - 1.3.6.1.4.1.26928.1.1.1.1.2.26
+    - name: ahClientUserName
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.27
+      type: DisplayString
+      help: It contains the user name of the wireless client - 1.3.6.1.4.1.26928.1.1.1.1.2.27
+    - name: ahPowerSrc
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.28
+      type: gauge
+      help: It indicates whether the power source is from the power adaptor or PoE
+        - 1.3.6.1.4.1.26928.1.1.1.1.2.28
+      enum_values:
+        0: adaptor
+        1: poe
+    - name: ahPoEEth0Pwr
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.30
+      type: gauge
+      help: It indicates the power level of PoE in watts multiply by 10. - 1.3.6.1.4.1.26928.1.1.1.1.2.30
+    - name: ahPoEEth1Pwr
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.32
+      type: gauge
+      help: It indicates the power level of PoE on eht1 in watts multiply by 10. -
+        1.3.6.1.4.1.26928.1.1.1.1.2.32
+    - name: ahRadioChannel
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.33
+      type: gauge
+      help: It is the channel number currently in use for this radio. - 1.3.6.1.4.1.26928.1.1.1.1.2.33
+    - name: ahRadioTxPower
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.34
+      type: gauge
+      help: It is the transmit power in dBm that the radio is currently using - 1.3.6.1.4.1.26928.1.1.1.1.2.34
+    - name: ahClientAuthMethod
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.35
+      type: gauge
+      help: It is the authentication method the client uses when communicating with
+        the HiveAP. - 1.3.6.1.4.1.26928.1.1.1.1.2.35
+      enum_values:
+        0: cwp
+        1: open
+        2: wep-open
+        3: wep-shared
+        4: wpa-psk
+        5: wpa2-psk
+        6: wpa-8021x
+        7: wpa2-8021X
+        8: wpa-auto-psk
+        9: wpa-auto-8021x
+        10: dynamic-wep
+        11: 8021x
+    - name: ahClientEncryptionMethod
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.36
+      type: gauge
+      help: It is the encryption method the client uses when communicating with the
+        HiveAP. - 1.3.6.1.4.1.26928.1.1.1.1.2.36
+      enum_values:
+        0: AES
+        1: TKIP
+        2: WEP
+        3: Non
+    - name: ahClientMACProtocol
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.37
+      type: gauge
+      help: It is the radio mode the client uses when communicating with the HiveAP.
+        - 1.3.6.1.4.1.26928.1.1.1.1.2.37
+      enum_values:
+        0: ah11a
+        1: ah11b
+        2: ah11g
+        3: ah11na
+        4: ah11ng
+    - name: ahClientVLAN
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.38
+      type: gauge
+      help: It is the VLAN that the client uses when communicating with the HiveAP.
+        - 1.3.6.1.4.1.26928.1.1.1.1.2.38
+    - name: ahClientUserProfId
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.39
+      type: gauge
+      help: It is the user profile ID that the client uses when communicating with
+        the HiveAP. - 1.3.6.1.4.1.26928.1.1.1.1.2.39
+    - name: ahClientChannel
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.40
+      type: gauge
+      help: It is the radio channel that the client uses when communicating with the
+        HiveAP. - 1.3.6.1.4.1.26928.1.1.1.1.2.40
+    - name: ahBSSID
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.42
+      type: OctetString
+      help: It is the basic service set identifier of the client if the ahRemoteId
+        is a client. - 1.3.6.1.4.1.26928.1.1.1.1.2.42
+    - name: ahPoEEth0MaxSpeed
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.43
+      type: gauge
+      help: It is the automatically adjusted maximum Ethernet speed based on the power
+        source and level. - 1.3.6.1.4.1.26928.1.1.1.1.2.43
+      enum_values:
+        1: linkdown
+        2: eth10
+        3: eth100
+        4: eth1000
+    - name: ahPoEEth1MaxSpeed
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.44
+      type: gauge
+      help: It is the automatically adjusted maximum Ethernet speed based on the power
+        source and level. - 1.3.6.1.4.1.26928.1.1.1.1.2.44
+      enum_values:
+        1: linkdown
+        2: eth10
+        3: eth100
+        4: eth1000
+    - name: ahPoEWifi0Setting
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.45
+      type: gauge
+      help: It is the automatically adjusted Wi-Fi setting based on the power source
+        and power level. - 1.3.6.1.4.1.26928.1.1.1.1.2.45
+      enum_values:
+        0: invalid
+        1: linkdown
+        2: config
+        3: tx2rx3
+    - name: ahPoEWifi1Setting
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.46
+      type: gauge
+      help: It is the automatically adjusted Wi-Fi setting based on the power source
+        and power level. - 1.3.6.1.4.1.26928.1.1.1.1.2.46
+      enum_values:
+        0: invalid
+        1: linkdown
+        2: config
+        3: tx2rx3
+    - name: ahPoEWifi2Setting
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.47
+      type: gauge
+      help: It is the automatically adjusted Wi-Fi setting based on the power source
+        and power level. - 1.3.6.1.4.1.26928.1.1.1.1.2.47
+      enum_values:
+        0: invalid
+        1: linkdown
+        2: config
+        3: tx2rx3
+    - name: ahAssociationTime
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.48
+      type: counter
+      help: The association time(s) of client connect or disconnect to AP. - 1.3.6.1.4.1.26928.1.1.1.1.2.48
+    - name: ahDiscoverAge
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.50
+      type: counter
+      help: It is the age from the rogue client is discovered. - 1.3.6.1.4.1.26928.1.1.1.1.2.50
+    - name: ahUpdateAge
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.51
+      type: counter
+      help: It is the age from the rogue client is updated. - 1.3.6.1.4.1.26928.1.1.1.1.2.51
+    - name: ahRunningAverageInterference
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.52
+      type: gauge
+      help: channel utilizations running average interference. - 1.3.6.1.4.1.26928.1.1.1.1.2.52
+    - name: ahShortTermInterference
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.53
+      type: gauge
+      help: channel utilizations short term interference - 1.3.6.1.4.1.26928.1.1.1.1.2.53
+    - name: ahSnapshotInterference
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.54
+      type: gauge
+      help: channel utilizations snapshot interference - 1.3.6.1.4.1.26928.1.1.1.1.2.54
+    - name: ahInterferenceThreshold
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.56
+      type: gauge
+      help: the configured channel utilizations interference threshold - 1.3.6.1.4.1.26928.1.1.1.1.2.56
+    - name: ahCRCErrRateThreshold
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.57
+      type: gauge
+      help: the configured CRC error rate threshold - 1.3.6.1.4.1.26928.1.1.1.1.2.57
+    - name: ahCRCErrRate
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.58
+      type: gauge
+      help: short term CRC error rate - 1.3.6.1.4.1.26928.1.1.1.1.2.58
+    - name: ahBandwidthSentinelStatus
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.59
+      type: gauge
+      help: Bandwidth sentinel status - 1.3.6.1.4.1.26928.1.1.1.1.2.59
+      enum_values:
+        0: alert
+        1: clear
+        2: bad
+    - name: ahGuaranteedBandwidth
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.60
+      type: gauge
+      help: the configured guaranteed bandwidth(Kbps) - 1.3.6.1.4.1.26928.1.1.1.1.2.60
+    - name: ahActualBandwidth
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.61
+      type: gauge
+      help: the actual bandwidth(Kbps). - 1.3.6.1.4.1.26928.1.1.1.1.2.61
+    - name: ahBandwidthSentinelAction
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.62
+      type: counter
+      help: bit maps to indicate which action has been taken on this client - 1.3.6.1.4.1.26928.1.1.1.1.2.62
+    - name: ahBeaconInterval
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.63
+      type: counter
+      help: It is the number of time units between Beacon transmissions, One time
+        unit is 1024 microseconds. - 1.3.6.1.4.1.26928.1.1.1.1.2.63
+    - name: ahLevel
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.64
+      type: gauge
+      help: The level value will tell HM whether this is an interface level alert
+        or a client alert. - 1.3.6.1.4.1.26928.1.1.1.1.2.64
+      enum_values:
+        1: interface
+        2: client
+    - name: ahAlarmAlertType
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.65
+      type: gauge
+      help: There are five types, CRC Rate only applies to interface level alert,
+        TX drop/retry rate is is calculated based on retries over total unicast TX
+        frames, RX drop rate is calculated based on the dropped RX frames over total
+        RX frames, Airtime percentage is the sum of both TX and RX airtime percentages.
+        - 1.3.6.1.4.1.26928.1.1.1.1.2.65
+      enum_values:
+        0: crcrate
+        1: txdroprate
+        2: txretryrate
+        3: rxdroprate
+        4: airtime
+    - name: ahThresholdValue
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.66
+      type: gauge
+      help: the configured CRC error rate, TX drop/retry rate, RX drop rate threshold
+        - 1.3.6.1.4.1.26928.1.1.1.1.2.66
+    - name: ahShortTermValue
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.67
+      type: gauge
+      help: the percentage of this sampling period, CRC error rate, TX drop/retry
+        rate, RX drop rate. - 1.3.6.1.4.1.26928.1.1.1.1.2.67
+    - name: ahSnapshotValue
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.68
+      type: gauge
+      help: the snapshot value of CRC error rate, TX drop/retry rate, RX drop rate.
+        - 1.3.6.1.4.1.26928.1.1.1.1.2.68
+    - name: ahIfName
+      oid: 1.3.6.1.4.1.26928.1.1.1.1.2.69
+      type: OctetString
+      help: Name - uniquely identifies an AP Interface. - 1.3.6.1.4.1.26928.1.1.1.1.2.69
+    - name: ahIfName
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.1
+      type: OctetString
+      help: Name - uniquely identifies an AP Interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.1
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahSSIDName
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.2
+      type: OctetString
+      help: Name - identifies a wireless interface with Access mode - 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.2
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahIfPromiscuous
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.3
+      type: gauge
+      help: Indicates whether an interface is in promiscuous mode or not. - 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: ahIfType
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.4
+      type: gauge
+      help: Indicates whether an interface is a physical or virtual one. - 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.4
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      enum_values:
+        0: ahPHYSICAL
+        1: ahVIRTURAL
+    - name: ahIfMode
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.5
+      type: gauge
+      help: Indicates whether an interface is used for Access or Backhaul currently.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.5
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      enum_values:
+        0: ahNotUsed
+        1: ahAccess
+        2: ahBackhaul
+        3: ahBridge
+    - name: ahIfConfMode
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.6
+      type: gauge
+      help: Indicates whether an interface is configured for Access or Backhaul. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.1.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      enum_values:
+        0: ahNotUsed
+        1: ahAccess
+        2: ahBackhaul
+        3: ahBridge
+    - name: ahClientMac
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.1
+      type: OctetString
+      help: Uniquely identifies a client. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.1
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientIP
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.2
+      type: InetAddressIPv4
+      help: The IP address of the client if known - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.2
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientHostname
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.3
+      type: OctetString
+      help: The host name of the client if known - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRSSI
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.4
+      type: gauge
+      help: An indicator for the RSSI of the client derived from last communication
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.4
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientLinkUptime
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.5
+      type: counter
+      help: Link up time in second - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.5
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientCWPUsed
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.6
+      type: gauge
+      help: The boolean indicating whether Captive Web Portal is used. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: ahClientAuthMethod
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.7
+      type: gauge
+      help: The authentication method the client uses to communicated with AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.7
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+      enum_values:
+        0: cwp
+        1: open
+        2: wep-open
+        3: wep-shared
+        4: wpa-psk
+        5: wpa2-psk
+        6: wpa-8021x
+        7: wpa2-8021X
+        8: wpa-auto-psk
+        9: wpa-auto-8021x
+        10: dynamic-wep
+    - name: ahClientEncryptionMethod
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.8
+      type: gauge
+      help: The encryption method the client uses to communicated with AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.8
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+      enum_values:
+        0: AES
+        1: TKIP
+        2: WEP
+        3: Non
+    - name: ahClientMACProtocol
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.9
+      type: gauge
+      help: The radio mode the client uses to communicated with AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.9
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+      enum_values:
+        0: ah11a
+        1: ah11b
+        2: ah11g
+        3: ah11na
+        4: ah11ng
+    - name: ahClientSSID
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.10
+      type: OctetString
+      help: The SSID used by client to communicated with AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.10
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientVLAN
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.11
+      type: gauge
+      help: The VLAN used by client to communicated with AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.11
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientUserProfId
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.12
+      type: gauge
+      help: The user profile id used by client to communicated with AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.12
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientChannel
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.13
+      type: gauge
+      help: The radio channel used by client to communicated with AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.13
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientLastTxRate
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.14
+      type: gauge
+      help: The rate (KBPS) of last transmitting frame to the client. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.14
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientUsername
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.15
+      type: OctetString
+      help: The client user name to login to the network - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.15
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRxDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.16
+      type: counter
+      help: The number of data frames received from client to AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.16
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRxDataOctets
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.17
+      type: counter
+      help: The number of data octets received from client to AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.17
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRxMgtFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.18
+      type: counter
+      help: The number of mgt frames received from client to AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.18
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRxUnicastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.19
+      type: counter
+      help: The number of unitcast frames received from client to AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.19
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRxMulticastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.20
+      type: counter
+      help: The number of multicast frames received from client to AP. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.20
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRxBroadcastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.21
+      type: counter
+      help: The number of broadcast frames received from client to AP. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.21
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRxMICFailures
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.22
+      type: counter
+      help: The number of frames dropped due to Message Integrity Check failure from
+        client to AP. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.22
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.23
+      type: counter
+      help: The number of transmitted data frames from . - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.23
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxMgtFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.24
+      type: counter
+      help: The number of transmitted management frames from . - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.24
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxDataOctets
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.25
+      type: counter
+      help: The number of transmitted data in octets from . - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.25
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxUnicastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.26
+      type: counter
+      help: The number of unitcast frames transmitted from client to AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.26
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxMulticastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.27
+      type: counter
+      help: The number of multicast frames transmitted from client to AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.27
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxBroadcastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.28
+      type: counter
+      help: The number of broadcast frames transmitted from client to AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.28
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientLastRxRate
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.29
+      type: gauge
+      help: The rate (KBPS) of last received frame from client. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.29
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxBeDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.30
+      type: counter
+      help: The number of transmitted best effort priority data frames from AP to
+        client. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.30
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxBgDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.31
+      type: counter
+      help: The number of transmitted back ground priority data frames from AP to
+        client. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.31
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxViDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.32
+      type: counter
+      help: The number of transmitted video priority data frames from AP to client.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.32
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxVoDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.33
+      type: counter
+      help: The number of transmitted voice priority data frames from AP to client.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.33
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientTxAirtime
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.34
+      type: counter
+      help: The accumulative transmit time in microseconds () from AP to client. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.2.1.34
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientRxAirtime
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.35
+      type: counter
+      help: The accumulative receive time in microseconds (us) from client to AP.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.35
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientAssociationTime
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.36
+      type: counter
+      help: The association time(s) of client connect to AP. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.36
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahClientBSSID
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.37
+      type: OctetString
+      help: It is the basic service set identifier of the client. - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.37
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahClientMac
+        type: OctetString
+    - name: ahRadioTxDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.1
+      type: counter
+      help: The number of transmit data frames for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.1
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxUnicastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.2
+      type: counter
+      help: The number of transmitted unicast frames for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.2
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxMulticastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.3
+      type: counter
+      help: The number of transmitted multicast frames for the given interface. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.3.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxBroadcastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.4
+      type: counter
+      help: The number of transmitted broadcast frames for the given interface. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.3.1.4
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxNonBeaconMgtFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.5
+      type: counter
+      help: The number of transmit management frames other than beacon for the given
+        interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.5
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxBeaconFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.6
+      type: counter
+      help: The number of transmit beacon frames for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxTotalRetries
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.7
+      type: counter
+      help: The total number of transmit retries for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.7
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxTotalFramesDropped
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.8
+      type: counter
+      help: The number of transmit frames dropped for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.8
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxTotalFrameErrors
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.9
+      type: counter
+      help: The total number of transmit frames in error for the given interface.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.9
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxFEForExcessiveHWRetries
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.10
+      type: counter
+      help: The number of transmit frames in error due to excessive hardware retries
+        for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.10
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioRxTotalDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.11
+      type: counter
+      help: The total number of received data frames for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.11
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioRxUnicastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.12
+      type: counter
+      help: The number of received unicast frames for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.12
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioRxMulticastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.13
+      type: counter
+      help: The number of received multicast frames for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.13
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioRxBroadcastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.14
+      type: counter
+      help: The number of received broadcast frames for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.14
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioRxMgtFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.15
+      type: counter
+      help: The number of received management frames for the given interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.15
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioRxTotalFrameDropped
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.16
+      type: counter
+      help: The total number of dropped received frames for the given interface. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.3.1.16
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxBeDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.17
+      type: counter
+      help: The number of transmitted best effort priority data frames from the radio.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.17
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxBgDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.18
+      type: counter
+      help: The number of transmitted back ground priority data frames from the radio.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.18
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxViDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.19
+      type: counter
+      help: The number of transmitted video priority data frames from the radio. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.3.1.19
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxVoDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.20
+      type: counter
+      help: The number of transmitted voice priority data frames from the radio. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.3.1.20
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTXRTSFailures
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.21
+      type: counter
+      help: The number of transmitted RTS failures from the Radio. - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.21
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxAirtime
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.22
+      type: counter
+      help: The accumulative transmit time in microseconds (us) from the given Radio.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.22
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioRxAirtime
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.23
+      type: counter
+      help: The accumulative receive time in microseconds (us) to the given radio.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.3.1.23
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfRxDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.1
+      type: counter
+      help: The number of received data frames for the given virtual interface. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.4.1.1
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfRxUnicastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.2
+      type: counter
+      help: The number of received unicast data frames for the given virtual interface.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.2
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfRxMulticastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.3
+      type: counter
+      help: The number of received multicast data frames for the given virtual interface.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfRxBroadcastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.4
+      type: counter
+      help: The number of received broadcast data frames for the given virtual interface.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.4
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfRxErrorFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.5
+      type: counter
+      help: The number of received error frames for the given virtual interface. -
+        1.3.6.1.4.1.26928.1.1.1.2.1.4.1.5
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfRxDroppedFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.6
+      type: counter
+      help: The number of received dropped frames for the given virtual interface.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.7
+      type: counter
+      help: The number of trasmitted data frames for the given virtual interface.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.7
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxUnicastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.8
+      type: counter
+      help: The number of transmitted unicast data frames for the given virtual interface.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.8
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxMulticastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.9
+      type: counter
+      help: The number of transmitted multicast data frames for the given virtual
+        interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.9
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxBroadcastDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.10
+      type: counter
+      help: The number of transmitted broadcast data frames for the given virtual
+        interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.10
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxErrorFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.11
+      type: counter
+      help: The number of trasmitted frames encontered error for the given virtual
+        interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.11
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxDroppedFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.12
+      type: counter
+      help: The number of trasmitted frames dropped due to error condition for the
+        given virtual interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.12
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxBeDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.13
+      type: counter
+      help: The number of transmitted best effort priority data frames from the virtual
+        interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.13
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxBgDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.14
+      type: counter
+      help: The number of transmitted back ground priority data frames from the virtual
+        interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.14
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxViDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.15
+      type: counter
+      help: The number of transmitted video priority data frames from the virtual
+        interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.15
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVIfTxVoDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.16
+      type: counter
+      help: The number of transmitted voice priority data frames from the virtual
+        interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.16
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVifTxAirtime
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.17
+      type: counter
+      help: The accumulative transmit time in microseconds (us) from the given SSID.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.17
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahVifRxAirtime
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.18
+      type: counter
+      help: The accumulative receive time in microseconds (us) to the given SSID.
+        - 1.3.6.1.4.1.26928.1.1.1.2.1.4.1.18
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioChannel
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.5.1.1
+      type: gauge
+      help: The channel number currently in use for this radio. - 1.3.6.1.4.1.26928.1.1.1.2.1.5.1.1
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioTxPower
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.5.1.2
+      type: gauge
+      help: The transmit power currently for the radio in dbm - 1.3.6.1.4.1.26928.1.1.1.2.1.5.1.2
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahRadioNoiseFloor
+      oid: 1.3.6.1.4.1.26928.1.1.1.2.1.5.1.3
+      type: gauge
+      help: The noise floor for the radio dbm - 1.3.6.1.4.1.26928.1.1.1.2.1.5.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+    - name: ahNeighberAPId
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.1
+      type: OctetString
+      help: Uniquely identifies an AP - neighbor. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.1
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahLinkCost
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.2
+      type: counter
+      help: neighbour cost metrice. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.2
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahRSSI
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.3
+      type: gauge
+      help: An indicator for the RSSI of the neighbour node derived from last NDP
+        message - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahLinkUptime
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.4
+      type: counter
+      help: Link up time in second - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.4
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahLinkType
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.5
+      type: gauge
+      help: Is it a ethernet link or wireless link. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.5
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+      enum_values:
+        0: ahETHERNET
+        1: ahWIRELESS
+    - name: ahRxDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.6
+      type: counter
+      help: The number of data frames received from the neighbor AP - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahRXDataOctets
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.7
+      type: counter
+      help: The number of data octets received from the neighbor AP - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.7
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahRxMgtFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.8
+      type: counter
+      help: The number of mgt frames received from the neighbor AP - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.8
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahRxUnicastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.9
+      type: counter
+      help: The number of unitcast frames received from the neighbor AP - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.9
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahRxMulticastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.10
+      type: counter
+      help: The number of multicast frames received from the neighbor AP. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.10
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahRxBroadcastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.11
+      type: counter
+      help: The number of broadcast frames received from the neighbor AP. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.11
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.12
+      type: counter
+      help: The number of transmitted data frames from the neighbor AP. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.12
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxMgtFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.13
+      type: counter
+      help: The number of transmitted management frames from the neighbor AP. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.13
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxDataOctets
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.14
+      type: counter
+      help: The number of transmitted data in octets from the neighbor AP. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.14
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxUnicastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.15
+      type: counter
+      help: The number of unitcast frames transmitted from the neighbor AP - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.15
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxMulticastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.16
+      type: counter
+      help: The number of multicast frames transmitted from the neighbor AP. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.16
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxBroadcastFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.17
+      type: counter
+      help: The number of broadcast frames transmitted from the neighbor AP. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.17
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxBeDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.18
+      type: counter
+      help: The number of transmitted best effort priority data frames from the AP
+        to its neighbor. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.18
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxBgDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.19
+      type: counter
+      help: The number of transmitted back ground priority data frames from the AP
+        to its neighbor. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.19
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxViDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.20
+      type: counter
+      help: The number of transmitted video priority data frames from the AP to its
+        neighbor. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.20
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahTxVoDataFrames
+      oid: 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.21
+      type: counter
+      help: The number of transmitted voice priority data frames from the AP to its
+        neighbor. - 1.3.6.1.4.1.26928.1.1.1.3.1.1.1.21
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      - labelname: ahNeighberAPId
+        type: OctetString
+    - name: ahSystemName
+      oid: 1.3.6.1.4.1.26928.1.2.1
+      type: DisplayString
+      help: aerohive platform system name - 1.3.6.1.4.1.26928.1.2.1
+    - name: ahSystemDescription
+      oid: 1.3.6.1.4.1.26928.1.2.2
+      type: DisplayString
+      help: aerohive platform system description - 1.3.6.1.4.1.26928.1.2.2
+    - name: ahCpuUtilization
+      oid: 1.3.6.1.4.1.26928.1.2.3
+      type: gauge
+      help: aerohive platform cpu utilization - 1.3.6.1.4.1.26928.1.2.3
+    - name: ahMemUtilization
+      oid: 1.3.6.1.4.1.26928.1.2.4
+      type: gauge
+      help: aerohive platform memory utilization - 1.3.6.1.4.1.26928.1.2.4
+    - name: ahSystemSerial
+      oid: 1.3.6.1.4.1.26928.1.2.5
+      type: DisplayString
+      help: aerohive platform system serial-number - 1.3.6.1.4.1.26928.1.2.5
+    - name: ahDeviceMode
+      oid: 1.3.6.1.4.1.26928.1.2.6
+      type: DisplayString
+      help: aerohive device mode type - 1.3.6.1.4.1.26928.1.2.6
+    - name: ahUpTime
+      oid: 1.3.6.1.4.1.26928.1.2.7
+      type: DisplayString
+      help: aerohive platform up time - 1.3.6.1.4.1.26928.1.2.7
+    - name: ahHwVersion
+      oid: 1.3.6.1.4.1.26928.1.2.8
+      type: DisplayString
+      help: aerohive platform hardware version - 1.3.6.1.4.1.26928.1.2.8
+    - name: ahClientCount
+      oid: 1.3.6.1.4.1.26928.1.2.9
+      type: gauge
+      help: the counter of devices connected to aerohive products - 1.3.6.1.4.1.26928.1.2.9
+    - name: ahEnvirmentTemp
+      oid: 1.3.6.1.4.1.26928.1.2.10
+      type: gauge
+      help: aerohive envirment temp-ditection - 1.3.6.1.4.1.26928.1.2.10
+    - name: ahEnvirmentFan
+      oid: 1.3.6.1.4.1.26928.1.2.11
+      type: gauge
+      help: aerohive envirment fan speed, unit as RPM - 1.3.6.1.4.1.26928.1.2.11
+    - name: ahFirmwareVersion
+      oid: 1.3.6.1.4.1.26928.1.2.12
+      type: DisplayString
+      help: aerohive platform fireware version - 1.3.6.1.4.1.26928.1.2.12
+  cisco_wlc:
+    walk:
+    - 1.3.6.1.4.1.14179.2.1.1.1.2
+    - 1.3.6.1.4.1.14179.2.1.1.1.38
+    - 1.3.6.1.4.1.14179.2.2.1.1.3
+    - 1.3.6.1.4.1.14179.2.2.13.1.3
+    - 1.3.6.1.4.1.14179.2.2.15.1.21
+    - 1.3.6.1.4.1.14179.2.2.2.1.15
+    - 1.3.6.1.4.1.14179.2.2.2.1.2
+    - 1.3.6.1.4.1.14179.2.2.2.1.4
+    - 1.3.6.1.4.1.14179.2.2.6.1
+    metrics:
+    - name: bsnDot11EssNumberOfMobileStations
+      oid: 1.3.6.1.4.1.14179.2.1.1.1.38
+      type: counter
+      help: No of Mobile Stations currently associated with the WLAN. - 1.3.6.1.4.1.14179.2.1.1.1.38
+      indexes:
+      - labelname: bsnDot11EssIndex
+        type: gauge
+      lookups:
+      - labels:
+        - bsnDot11EssIndex
+        labelname: bsnDot11EssSsid
+        oid: 1.3.6.1.4.1.14179.2.1.1.1.2
+        type: DisplayString
+      - labels: []
+        labelname: bsnDot11EssIndex
+    - name: bsnAPIfLoadChannelUtilization
+      oid: 1.3.6.1.4.1.14179.2.2.13.1.3
+      type: gauge
+      help: Channel Utilization - 1.3.6.1.4.1.14179.2.2.13.1.3
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDBNoisePower
+      oid: 1.3.6.1.4.1.14179.2.2.15.1.21
+      type: gauge
+      help: This is the average noise power in dBm on each channel that is available
+        to Airespace AP - 1.3.6.1.4.1.14179.2.2.15.1.21
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      - labelname: bsnAPIfNoiseChannelNo
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnApIfNoOfUsers
+      oid: 1.3.6.1.4.1.14179.2.2.2.1.15
+      type: counter
+      help: No of Users associated with this radio. - 1.3.6.1.4.1.14179.2.2.2.1.15
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfType
+      oid: 1.3.6.1.4.1.14179.2.2.2.1.2
+      type: gauge
+      help: The type of this interface - 1.3.6.1.4.1.14179.2.2.2.1.2
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+      enum_values:
+        1: dot11b
+        2: dot11a
+        4: uwb
+    - name: bsnAPIfPhyChannelNumber
+      oid: 1.3.6.1.4.1.14179.2.2.2.1.4
+      type: gauge
+      help: Current channel number of the AP Interface - 1.3.6.1.4.1.14179.2.2.2.1.4
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+      enum_values:
+        1: ch1
+        2: ch2
+        3: ch3
+        4: ch4
+        5: ch5
+        6: ch6
+        7: ch7
+        8: ch8
+        9: ch9
+        10: ch10
+        11: ch11
+        12: ch12
+        13: ch13
+        14: ch14
+        20: ch20
+        21: ch21
+        22: ch22
+        23: ch23
+        24: ch24
+        25: ch25
+        26: ch26
+        34: ch34
+        36: ch36
+        38: ch38
+        40: ch40
+        42: ch42
+        44: ch44
+        46: ch46
+        48: ch48
+        52: ch52
+        56: ch56
+        60: ch60
+        64: ch64
+        100: ch100
+        104: ch104
+        108: ch108
+        112: ch112
+        116: ch116
+        120: ch120
+        124: ch124
+        128: ch128
+        132: ch132
+        136: ch136
+        140: ch140
+        149: ch149
+        153: ch153
+        157: ch157
+        161: ch161
+        165: ch165
+        169: ch169
+    - name: bsnAPIfDot11TransmittedFragmentCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.1
+      type: counter
+      help: This counter shall be incremented for an acknowledged MPDU with an individual
+        address in the address 1 field or an MPDU with a multicast address in the
+        address 1 field of type Data or Management. - 1.3.6.1.4.1.14179.2.2.6.1.1
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11MulticastTransmittedFrameCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.2
+      type: counter
+      help: This counter shall increment only when the multicast bit is set in the
+        destination MAC address of a successfully transmitted MSDU - 1.3.6.1.4.1.14179.2.2.6.1.2
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11RetryCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.3
+      type: counter
+      help: This counter shall increment when an MSDU is successfully transmitted
+        after one or more retransmissions. - 1.3.6.1.4.1.14179.2.2.6.1.3
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11MultipleRetryCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.4
+      type: counter
+      help: This counter shall increment when an MSDU is successfully transmitted
+        after more than one retransmission. - 1.3.6.1.4.1.14179.2.2.6.1.4
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11FrameDuplicateCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.5
+      type: counter
+      help: This counter shall increment when a frame is received that the Sequence
+        Control field indicates is a duplicate. - 1.3.6.1.4.1.14179.2.2.6.1.5
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11RTSSuccessCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.6
+      type: counter
+      help: This counter shall increment when a CTS is received in response to an
+        RTS. - 1.3.6.1.4.1.14179.2.2.6.1.6
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11RTSFailureCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.7
+      type: counter
+      help: This counter shall increment when a CTS is not received in response to
+        an RTS. - 1.3.6.1.4.1.14179.2.2.6.1.7
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11ACKFailureCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.8
+      type: counter
+      help: This counter shall increment when an ACK is not received when expected.
+        - 1.3.6.1.4.1.14179.2.2.6.1.8
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11ReceivedFragmentCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.9
+      type: counter
+      help: This counter shall be incremented for each successfully received MPDU
+        of type Data or Management. - 1.3.6.1.4.1.14179.2.2.6.1.9
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11MulticastReceivedFrameCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.10
+      type: counter
+      help: This counter shall increment when a MSDU is received with the multicast
+        bit set in the destination MAC address. - 1.3.6.1.4.1.14179.2.2.6.1.10
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11FCSErrorCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.11
+      type: counter
+      help: This counter shall increment when an FCS error is detected in a received
+        MPDU. - 1.3.6.1.4.1.14179.2.2.6.1.11
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11TransmittedFrameCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.12
+      type: counter
+      help: This counter shall increment for each successfully transmitted MSDU. -
+        1.3.6.1.4.1.14179.2.2.6.1.12
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11WEPUndecryptableCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.13
+      type: counter
+      help: This counter shall increment when a frame is received with the WEP subfield
+        of the Frame Control field set to one and the WEPOn value for the key mapped
+        to the TA's MAC address indicates that the frame should not have been encrypted
+        or that frame is discarded due to the receiving STA not implementing the privacy
+        option. - 1.3.6.1.4.1.14179.2.2.6.1.13
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+    - name: bsnAPIfDot11FailedCount
+      oid: 1.3.6.1.4.1.14179.2.2.6.1.33
+      type: counter
+      help: This counter shall increment when an MSDU is not transmitted successfully
+        due to the number of transmit attempts exceeding either the bsnAPIfDot11ShortRetryLimit
+        or dot11LongRetryLimit. - 1.3.6.1.4.1.14179.2.2.6.1.33
+      indexes:
+      - labelname: bsnAPDot3MacAddress
+        type: PhysAddress48
+        fixed_size: 6
+      - labelname: bsnAPIfSlotId
+        type: gauge
+      lookups:
+      - labels:
+        - bsnAPDot3MacAddress
+        labelname: bsnAPName
+        oid: 1.3.6.1.4.1.14179.2.2.1.1.3
+        type: OctetString
+      - labels: []
+        labelname: bsnAPDot3MacAddress
+  if_mib:
+    walk:
+    - 1.3.6.1.2.1.2
+    - 1.3.6.1.2.1.31.1.1
+    get:
+    - 1.3.6.1.2.1.1.3.0
+    metrics:
+    - name: sysUpTime
+      oid: 1.3.6.1.2.1.1.3
+      type: gauge
+      help: The time (in hundredths of a second) since the network management portion
+        of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+    - name: ifNumber
+      oid: 1.3.6.1.2.1.2.1
+      type: gauge
+      help: The number of network interfaces (regardless of their current state) present
+        on this system. - 1.3.6.1.2.1.2.1
+    - name: ifIndex
+      oid: 1.3.6.1.2.1.2.2.1.1
+      type: gauge
+      help: A unique value, greater than zero, for each interface - 1.3.6.1.2.1.2.2.1.1
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: EnumAsInfo
+      help: The type of interface - 1.3.6.1.2.1.2.2.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      enum_values:
+        1: other
+        2: regular1822
+        3: hdh1822
+        4: ddnX25
+        5: rfc877x25
+        6: ethernetCsmacd
+        7: iso88023Csmacd
+        8: iso88024TokenBus
+        9: iso88025TokenRing
+        10: iso88026Man
+        11: starLan
+        12: proteon10Mbit
+        13: proteon80Mbit
+        14: hyperchannel
+        15: fddi
+        16: lapb
+        17: sdlc
+        18: ds1
+        19: e1
+        20: basicISDN
+        21: primaryISDN
+        22: propPointToPointSerial
+        23: ppp
+        24: softwareLoopback
+        25: eon
+        26: ethernet3Mbit
+        27: nsip
+        28: slip
+        29: ultra
+        30: ds3
+        31: sip
+        32: frameRelay
+        33: rs232
+        34: para
+        35: arcnet
+        36: arcnetPlus
+        37: atm
+        38: miox25
+        39: sonet
+        40: x25ple
+        41: iso88022llc
+        42: localTalk
+        43: smdsDxi
+        44: frameRelayService
+        45: v35
+        46: hssi
+        47: hippi
+        48: modem
+        49: aal5
+        50: sonetPath
+        51: sonetVT
+        52: smdsIcip
+        53: propVirtual
+        54: propMultiplexor
+        55: ieee80212
+        56: fibreChannel
+        57: hippiInterface
+        58: frameRelayInterconnect
+        59: aflane8023
+        60: aflane8025
+        61: cctEmul
+        62: fastEther
+        63: isdn
+        64: v11
+        65: v36
+        66: g703at64k
+        67: g703at2mb
+        68: qllc
+        69: fastEtherFX
+        70: channel
+        71: ieee80211
+        72: ibm370parChan
+        73: escon
+        74: dlsw
+        75: isdns
+        76: isdnu
+        77: lapd
+        78: ipSwitch
+        79: rsrb
+        80: atmLogical
+        81: ds0
+        82: ds0Bundle
+        83: bsc
+        84: async
+        85: cnr
+        86: iso88025Dtr
+        87: eplrs
+        88: arap
+        89: propCnls
+        90: hostPad
+        91: termPad
+        92: frameRelayMPI
+        93: x213
+        94: adsl
+        95: radsl
+        96: sdsl
+        97: vdsl
+        98: iso88025CRFPInt
+        99: myrinet
+        100: voiceEM
+        101: voiceFXO
+        102: voiceFXS
+        103: voiceEncap
+        104: voiceOverIp
+        105: atmDxi
+        106: atmFuni
+        107: atmIma
+        108: pppMultilinkBundle
+        109: ipOverCdlc
+        110: ipOverClaw
+        111: stackToStack
+        112: virtualIpAddress
+        113: mpc
+        114: ipOverAtm
+        115: iso88025Fiber
+        116: tdlc
+        117: gigabitEthernet
+        118: hdlc
+        119: lapf
+        120: v37
+        121: x25mlp
+        122: x25huntGroup
+        123: transpHdlc
+        124: interleave
+        125: fast
+        126: ip
+        127: docsCableMaclayer
+        128: docsCableDownstream
+        129: docsCableUpstream
+        130: a12MppSwitch
+        131: tunnel
+        132: coffee
+        133: ces
+        134: atmSubInterface
+        135: l2vlan
+        136: l3ipvlan
+        137: l3ipxvlan
+        138: digitalPowerline
+        139: mediaMailOverIp
+        140: dtm
+        141: dcn
+        142: ipForward
+        143: msdsl
+        144: ieee1394
+        145: if-gsn
+        146: dvbRccMacLayer
+        147: dvbRccDownstream
+        148: dvbRccUpstream
+        149: atmVirtual
+        150: mplsTunnel
+        151: srp
+        152: voiceOverAtm
+        153: voiceOverFrameRelay
+        154: idsl
+        155: compositeLink
+        156: ss7SigLink
+        157: propWirelessP2P
+        158: frForward
+        159: rfc1483
+        160: usb
+        161: ieee8023adLag
+        162: bgppolicyaccounting
+        163: frf16MfrBundle
+        164: h323Gatekeeper
+        165: h323Proxy
+        166: mpls
+        167: mfSigLink
+        168: hdsl2
+        169: shdsl
+        170: ds1FDL
+        171: pos
+        172: dvbAsiIn
+        173: dvbAsiOut
+        174: plc
+        175: nfas
+        176: tr008
+        177: gr303RDT
+        178: gr303IDT
+        179: isup
+        180: propDocsWirelessMaclayer
+        181: propDocsWirelessDownstream
+        182: propDocsWirelessUpstream
+        183: hiperlan2
+        184: propBWAp2Mp
+        185: sonetOverheadChannel
+        186: digitalWrapperOverheadChannel
+        187: aal2
+        188: radioMAC
+        189: atmRadio
+        190: imt
+        191: mvl
+        192: reachDSL
+        193: frDlciEndPt
+        194: atmVciEndPt
+        195: opticalChannel
+        196: opticalTransport
+        197: propAtm
+        198: voiceOverCable
+        199: infiniband
+        200: teLink
+        201: q2931
+        202: virtualTg
+        203: sipTg
+        204: sipSig
+        205: docsCableUpstreamChannel
+        206: econet
+        207: pon155
+        208: pon622
+        209: bridge
+        210: linegroup
+        211: voiceEMFGD
+        212: voiceFGDEANA
+        213: voiceDID
+        214: mpegTransport
+        215: sixToFour
+        216: gtp
+        217: pdnEtherLoop1
+        218: pdnEtherLoop2
+        219: opticalChannelGroup
+        220: homepna
+        221: gfp
+        222: ciscoISLvlan
+        223: actelisMetaLOOP
+        224: fcipLink
+        225: rpr
+        226: qam
+        227: lmp
+        228: cblVectaStar
+        229: docsCableMCmtsDownstream
+        230: adsl2
+        231: macSecControlledIF
+        232: macSecUncontrolledIF
+        233: aviciOpticalEther
+        234: atmbond
+        235: voiceFGDOS
+        236: mocaVersion1
+        237: ieee80216WMAN
+        238: adsl2plus
+        239: dvbRcsMacLayer
+        240: dvbTdm
+        241: dvbRcsTdma
+        242: x86Laps
+        243: wwanPP
+        244: wwanPP2
+        245: voiceEBS
+        246: ifPwType
+        247: ilan
+        248: pip
+        249: aluELP
+        250: gpon
+        251: vdsl2
+        252: capwapDot11Profile
+        253: capwapDot11Bss
+        254: capwapWtpVirtualRadio
+        255: bits
+        256: docsCableUpstreamRfPort
+        257: cableDownstreamRfPort
+        258: vmwareVirtualNic
+        259: ieee802154
+        260: otnOdu
+        261: otnOtu
+        262: ifVfiType
+        263: g9981
+        264: g9982
+        265: g9983
+        266: aluEpon
+        267: aluEponOnu
+        268: aluEponPhysicalUni
+        269: aluEponLogicalLink
+        270: aluGponOnu
+        271: aluGponPhysicalUni
+        272: vmwareNicTeam
+        277: docsOfdmDownstream
+        278: docsOfdmaUpstream
+        279: gfast
+        280: sdci
+        281: xboxWireless
+        282: fastdsl
+        283: docsCableScte55d1FwdOob
+        284: docsCableScte55d1RetOob
+        285: docsCableScte55d2DsOob
+        286: docsCableScte55d2UsOob
+        287: docsCableNdf
+        288: docsCableNdr
+        289: ptm
+        290: ghn
+        291: otnOtsi
+        292: otnOtuc
+        293: otnOduc
+        294: otnOtsig
+        295: microwaveCarrierTermination
+        296: microwaveRadioLinkTerminal
+        297: ieee8021axDrni
+        298: ax25
+        299: ieee19061nanocom
+        300: cpri
+        301: omni
+        302: roe
+        303: p2pOverLan
+    - name: ifMtu
+      oid: 1.3.6.1.2.1.2.2.1.4
+      type: gauge
+      help: The size of the largest packet which can be sent/received on the interface,
+        specified in octets - 1.3.6.1.2.1.2.2.1.4
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifSpeed
+      oid: 1.3.6.1.2.1.2.2.1.5
+      type: gauge
+      help: An estimate of the interface's current bandwidth in bits per second -
+        1.3.6.1.2.1.2.2.1.5
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifPhysAddress
+      oid: 1.3.6.1.2.1.2.2.1.6
+      type: PhysAddress48
+      help: The interface's address at its protocol sub-layer - 1.3.6.1.2.1.2.2.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifAdminStatus
+      oid: 1.3.6.1.2.1.2.2.1.7
+      type: gauge
+      help: The desired state of the interface - 1.3.6.1.2.1.2.2.1.7
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      enum_values:
+        1: up
+        2: down
+        3: testing
+    - name: ifOperStatus
+      oid: 1.3.6.1.2.1.2.2.1.8
+      type: gauge
+      help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      enum_values:
+        1: up
+        2: down
+        3: testing
+        4: unknown
+        5: dormant
+        6: notPresent
+        7: lowerLayerDown
+    - name: ifLastChange
+      oid: 1.3.6.1.2.1.2.2.1.9
+      type: gauge
+      help: The value of sysUpTime at the time the interface entered its current operational
+        state - 1.3.6.1.2.1.2.2.1.9
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifInOctets
+      oid: 1.3.6.1.2.1.2.2.1.10
+      type: counter
+      help: The total number of octets received on the interface, including framing
+        characters - 1.3.6.1.2.1.2.2.1.10
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifInUcastPkts
+      oid: 1.3.6.1.2.1.2.2.1.11
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were not addressed to a multicast or broadcast address at this sub-layer
+        - 1.3.6.1.2.1.2.2.1.11
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifInNUcastPkts
+      oid: 1.3.6.1.2.1.2.2.1.12
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were addressed to a multicast or broadcast address at this sub-layer
+        - 1.3.6.1.2.1.2.2.1.12
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifInDiscards
+      oid: 1.3.6.1.2.1.2.2.1.13
+      type: counter
+      help: The number of inbound packets which were chosen to be discarded even though
+        no errors had been detected to prevent their being deliverable to a higher-layer
+        protocol - 1.3.6.1.2.1.2.2.1.13
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifInErrors
+      oid: 1.3.6.1.2.1.2.2.1.14
+      type: counter
+      help: For packet-oriented interfaces, the number of inbound packets that contained
+        errors preventing them from being deliverable to a higher-layer protocol -
+        1.3.6.1.2.1.2.2.1.14
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifInUnknownProtos
+      oid: 1.3.6.1.2.1.2.2.1.15
+      type: counter
+      help: For packet-oriented interfaces, the number of packets received via the
+        interface which were discarded because of an unknown or unsupported protocol
+        - 1.3.6.1.2.1.2.2.1.15
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifOutOctets
+      oid: 1.3.6.1.2.1.2.2.1.16
+      type: counter
+      help: The total number of octets transmitted out of the interface, including
+        framing characters - 1.3.6.1.2.1.2.2.1.16
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifOutUcastPkts
+      oid: 1.3.6.1.2.1.2.2.1.17
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were not addressed to a multicast or broadcast address at this sub-layer,
+        including those that were discarded or not sent - 1.3.6.1.2.1.2.2.1.17
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifOutNUcastPkts
+      oid: 1.3.6.1.2.1.2.2.1.18
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were addressed to a multicast or broadcast address at this sub-layer,
+        including those that were discarded or not sent - 1.3.6.1.2.1.2.2.1.18
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifOutDiscards
+      oid: 1.3.6.1.2.1.2.2.1.19
+      type: counter
+      help: The number of outbound packets which were chosen to be discarded even
+        though no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifOutErrors
+      oid: 1.3.6.1.2.1.2.2.1.20
+      type: counter
+      help: For packet-oriented interfaces, the number of outbound packets that could
+        not be transmitted because of errors - 1.3.6.1.2.1.2.2.1.20
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifOutQLen
+      oid: 1.3.6.1.2.1.2.2.1.21
+      type: gauge
+      help: The length of the output packet queue (in packets). - 1.3.6.1.2.1.2.2.1.21
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifSpecific
+      oid: 1.3.6.1.2.1.2.2.1.22
+      type: OctetString
+      help: A reference to MIB definitions specific to the particular media being
+        used to realize the interface - 1.3.6.1.2.1.2.2.1.22
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifInMulticastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.2
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were addressed to a multicast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.2
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifInBroadcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.3
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were addressed to a broadcast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.3
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifOutMulticastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.4
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were addressed to a multicast address at this sub-layer, including
+        those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.4
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifOutBroadcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.5
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were addressed to a broadcast address at this sub-layer, including
+        those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.5
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifHCInOctets
+      oid: 1.3.6.1.2.1.31.1.1.1.6
+      type: counter
+      help: The total number of octets received on the interface, including framing
+        characters - 1.3.6.1.2.1.31.1.1.1.6
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifHCInUcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.7
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were not addressed to a multicast or broadcast address at this sub-layer
+        - 1.3.6.1.2.1.31.1.1.1.7
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifHCInMulticastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.8
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were addressed to a multicast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.8
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifHCInBroadcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.9
+      type: counter
+      help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+        which were addressed to a broadcast address at this sub-layer - 1.3.6.1.2.1.31.1.1.1.9
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifHCOutOctets
+      oid: 1.3.6.1.2.1.31.1.1.1.10
+      type: counter
+      help: The total number of octets transmitted out of the interface, including
+        framing characters - 1.3.6.1.2.1.31.1.1.1.10
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifHCOutUcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.11
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were not addressed to a multicast or broadcast address at this sub-layer,
+        including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifHCOutMulticastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.12
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were addressed to a multicast address at this sub-layer, including
+        those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.12
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifHCOutBroadcastPkts
+      oid: 1.3.6.1.2.1.31.1.1.1.13
+      type: counter
+      help: The total number of packets that higher-level protocols requested be transmitted,
+        and which were addressed to a broadcast address at this sub-layer, including
+        those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.13
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifLinkUpDownTrapEnable
+      oid: 1.3.6.1.2.1.31.1.1.1.14
+      type: gauge
+      help: Indicates whether linkUp/linkDown traps should be generated for this interface
+        - 1.3.6.1.2.1.31.1.1.1.14
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      enum_values:
+        1: enabled
+        2: disabled
+    - name: ifHighSpeed
+      oid: 1.3.6.1.2.1.31.1.1.1.15
+      type: gauge
+      help: An estimate of the interface's current bandwidth in units of 1,000,000
+        bits per second - 1.3.6.1.2.1.31.1.1.1.15
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+    - name: ifPromiscuousMode
+      oid: 1.3.6.1.2.1.31.1.1.1.16
+      type: gauge
+      help: This object has a value of false(2) if this interface only accepts packets/frames
+        that are addressed to this station - 1.3.6.1.2.1.31.1.1.1.16
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: ifConnectorPresent
+      oid: 1.3.6.1.2.1.31.1.1.1.17
+      type: gauge
+      help: This object has the value 'true(1)' if the interface sublayer has a physical
+        connector and the value 'false(2)' otherwise. - 1.3.6.1.2.1.31.1.1.1.17
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: ifCounterDiscontinuityTime
+      oid: 1.3.6.1.2.1.31.1.1.1.19
+      type: gauge
+      help: The value of sysUpTime on the most recent occasion at which any one or
+        more of this interface's counters suffered a discontinuity - 1.3.6.1.2.1.31.1.1.1.19
+      indexes:
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - ifIndex
+        labelname: ifAlias
+        oid: 1.3.6.1.2.1.31.1.1.1.18
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.2.1.2.2.1.2
+        type: DisplayString
+      - labels:
+        - ifIndex
+        labelname: ifName
+        oid: 1.3.6.1.2.1.31.1.1.1.1
+        type: DisplayString
