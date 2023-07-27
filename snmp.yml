@@ -180,10 +180,6 @@ modules:
       oid: 1.3.6.1.4.1.26928.1.1.1.1.2.26
       type: DisplayString
       help: It contains the host name of the wireless client - 1.3.6.1.4.1.26928.1.1.1.1.2.26
-      regex_extracts:
-        "ahClientHostName":
-        - value: $1
-          regex: ^(?:(\d+).*)$
     - name: ahClientUserName
       oid: 1.3.6.1.4.1.26928.1.1.1.1.2.27
       type: DisplayString
@@ -422,18 +418,18 @@ modules:
         - 1.3.6.1.4.1.26928.1.1.1.1.2.68
     - name: ahIfName
       oid: 1.3.6.1.4.1.26928.1.1.1.1.2.69
-      type: OctetString
+      type: DisplayString
       help: Name - uniquely identifies an AP Interface. - 1.3.6.1.4.1.26928.1.1.1.1.2.69
     - name: ahIfName
       oid: 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.1
-      type: OctetString
+      type: DisplayString
       help: Name - uniquely identifies an AP Interface. - 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.1
       indexes:
       - labelname: ifIndex
         type: gauge
     - name: ahSSIDName
       oid: 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.2
-      type: OctetString
+      type: DisplayString
       help: Name - identifies a wireless interface with Access mode - 1.3.6.1.4.1.26928.1.1.1.2.1.1.1.2
       indexes:
       - labelname: ifIndex
@@ -504,7 +500,7 @@ modules:
         type: OctetString
     - name: ahClientHostname
       oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.3
-      type: OctetString
+      type: DisplayString
       help: The host name of the client if known - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.3
       indexes:
       - labelname: ifIndex
@@ -594,7 +590,7 @@ modules:
         4: ah11ng
     - name: ahClientSSID
       oid: 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.10
-      type: OctetString
+      type: DisplayString
       help: The SSID used by client to communicated with AP - 1.3.6.1.4.1.26928.1.1.1.2.1.2.1.10
       indexes:
       - labelname: ifIndex

@@ -35,3 +35,7 @@ most of the string values are returned as hex... we need ot convert them..
 apparently overrides in generator.yml is the most friendly way
 
 https://www.robustperception.io/numbers-from-displaystrings-with-the-snmp_exporter/
+
+#### update
+
+overrides in generator.yml didn't cover all teh touchpoints. i had to manualy change some types in snmp.yl from OctetString to DisplayStirng
